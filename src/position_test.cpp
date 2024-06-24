@@ -19,8 +19,8 @@ int main() {
 
     actuator.setPidParameterPositionRingI(0.0f);
     std::cout << "getPidParameterPositionRingI: " << actuator.getPidParameterPositionRingI() << std::endl;
-    
-    actuator.setPidParameterPositionRingD(140.0f);
+
+    actuator.setPidParameterPositionRingD(150.0f);
     std::cout << "getPidParameterPositionRingD: " << actuator.getPidParameterPositionRingD() << std::endl;
 
     actuator.setPidParameterPositionLoopSlope(0.0f);
@@ -29,8 +29,8 @@ int main() {
     actuator.setPidParameterPositionLoopFilterPeriod(0.01f);
     std::cout << "getPidParameterPositionLoopFilterPeriod: " << actuator.getPidParameterPositionLoopFilterPeriod() << std::endl;
 
-    actuator.setRestrictionParameterMotorSpeedLimit(5.0f);
-    
+    actuator.setRestrictionParameterMotorSpeedLimit(20.0f);
+
     actuator.setPositionMode();
     std::cout << "getMotorMode: " << myactuator_rh::MOTOR_MODE_MAP[actuator.getMotorMode()] << std::endl;
 
@@ -38,20 +38,27 @@ int main() {
     std::cout << "current motor position: " << actuator.getCurrentPosition() << std::endl;
 
     actuator.setMotorEnabled();
-    
-    actuator.setSinglePointOperation(90.0f);
 
-    while(true)
+    
+
+    for(size_t i = 0; i < 10; i++)
     {
-        auto position = actuator.getCurrentPosition();
-        std::cout << "get motor position: " << position << std::endl;
-        auto delta_position = fabsf(fabsf(position) - 90.0);
-        std::cout << "delta position: " << delta_position << std::endl;
-        if( delta_position < 0.5)
-        {
-            break;
-        }
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        actuator.setSinglePointOperation(360.0f);
+        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+        actuator.setSinglePointOperation(0.0f);
+        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
     }
+    // while(true)
+    // {
+    //     auto position = actuator.getCurrentPosition();
+    //     std::cout << "get motor position: " << position << std::endl;
+    //     auto delta_position = fabsf(fabsf(position) - 90.0);
+    //     std::cout << "delta position: " << delta_position << std::endl;
+    //     if( delta_position < 0.5)
+    //     {
+    //         break;
+    //     }
+    //     std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    // }
 
 }
