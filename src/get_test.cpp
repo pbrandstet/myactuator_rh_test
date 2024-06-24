@@ -11,34 +11,6 @@ int main() {
     myactuator_rh::CanDriver driver {"can0"};
     myactuator_rh::ActuatorInterface actuator {driver, 1};
 
-    // std::cout << "get motor name: " << actuator.getMotorName() << std::endl;
-    // std::cout << "set motor enabled" << std::endl;
-    // actuator.setMotorEnabled();
-    // actuator.setPositionMode();
-    // std::cout << "get motor mode: " << myactuator_rh::MOTOR_MODE_MAP[actuator.getMotorMode()] << std::endl;
-    // std::cout << "get motor status: " << myactuator_rh::MOTOR_STATUS_MAP[actuator.getMotorStatus()] << std::endl;
-    // actuator.setCurrentPositionAsZeroPoint();
-    // std::this_thread::sleep_for(std::chrono::seconds(1));
-    // std::cout << "get motor position: " << actuator.getCurrentPosition() << std::endl;
-
-    // actuator.setSinglePointOperation(90.0f);
-
-    // while(true)
-    // {
-    //   std::cout << "get motor position: " << actuator.getCurrentPosition() << std::endl;
-    //   std::cout << abs(abs(actuator.getCurrentPosition()) - 180.0) << std::endl;
-    //   if( abs(abs(actuator.getCurrentPosition()) - 180.0) < 0.1)
-    //   {
-    //     std::cout << "set motor disabled" << std::endl;
-        
-    //     break;
-    //   }
-    // }
-    
-    // actuator.setMotorDisabled();
-
-
-
     std::cout << "##### PID Parameters ##### \n" << std::endl;
     std::cout << "getPidParameterPositionRingP: " << actuator.getPidParameterPositionRingP() << std::endl;
     std::cout << "getPidParameterPositionRingI: " << actuator.getPidParameterPositionRingI() << std::endl;
