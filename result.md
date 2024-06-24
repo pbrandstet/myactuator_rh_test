@@ -82,10 +82,17 @@ getRestrictionParameterBrakeMaintenance: 40
 getRestrictionParameterOvervoltageValue: 30
 getRestrictionParameterReductionRatio: 101
 getRestrictionParameterMotorNumber: 1
-getRestrictionParameterFactoryTime: 20240523
+getRestrictionParameterFactoryTime: 20240617
+
 
 ##### GENERAL VALUES #####
 
-getMotorTemperature: -131072
-getProgramVersion: 886582535
+getCurrentPosition: -2.89307
+getCurrentSpeed: 1.4013e-45
+getQaxisCurrent: 0
+getQaxisVoltage: 0
+getDaxisCurrent: 0
+getDaxisVoltage: 0
+getMotorTemperature: 25.1
+getProgramVersion: 20240429
 getMotorName: 5929044113186889760
