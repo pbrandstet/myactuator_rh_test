@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "~/.local/lib/python3.10/site-packages/pyi_gen"
+    ]
+}
