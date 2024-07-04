@@ -13,3 +13,9 @@ add_executable(rh_position_test
 )
 
 target_link_libraries(rh_position_test PUBLIC myactuator_rh::myactuator_rh)
+
+add_executable(rh_set_can_id
+  src/set_can_id.cpp
+)
+
+target_link_libraries(rh_set_can_id PUBLIC myactuator_rh::myactuator_rh)
