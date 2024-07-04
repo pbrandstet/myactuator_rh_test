@@ -9,8 +9,8 @@
 
 
 int main() {
-    myactuator_rh::CanDriver driver {"can0"};
-    myactuator_rh::ActuatorInterface actuator {driver, 1};
+    myactuator_rh::CanDriver driver {"can1"};
+    myactuator_rh::ActuatorInterface actuator {driver, 23};
 
     actuator.setMotorDisabled();
 
@@ -39,26 +39,15 @@ int main() {
 
     actuator.setMotorEnabled();
 
-    
+    actuator.setSinglePointOperation(0.0f);
 
-    for(size_t i = 0; i < 10; i++)
-    {
-        actuator.setSinglePointOperation(360.0f);
-        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
-        actuator.setSinglePointOperation(0.0f);
-        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
-    }
     // while(true)
     // {
-    //     auto position = actuator.getCurrentPosition();
-    //     std::cout << "get motor position: " << position << std::endl;
-    //     auto delta_position = fabsf(fabsf(position) - 90.0);
-    //     std::cout << "delta position: " << delta_position << std::endl;
-    //     if( delta_position < 0.5)
+    //     if(abs(abs(actuator.getCurrentPosition()) - 180.0) < 0.1)
     //     {
+    //         std::cout << "position reached" << std::endl;
     //         break;
     //     }
-    //     std::this_thread::sleep_for(std::chrono::milliseconds(100));
     // }
 
 }
