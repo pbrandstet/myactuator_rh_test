@@ -9,7 +9,7 @@
 
 int main() {
     myactuator_rh::CanDriver driver {"can0"};
-    myactuator_rh::ActuatorInterface actuator {driver, 1};
+    myactuator_rh::ActuatorInterface actuator {driver, 22};
 
     std::cout << "##### PID Parameters ##### \n" << std::endl;
     std::cout << "getPidParameterPositionRingP: " << actuator.getPidParameterPositionRingP() << std::endl;

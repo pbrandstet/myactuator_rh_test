@@ -27,30 +27,30 @@ actuator.setPidParameterDAxisCurrentLoopD(0.0)
 actuator.setPidParameterDAxisCurrentLoopSlope(40.0)
 actuator.setPidParameterDAxisCurrentLoopFilterPeriod(0.01)
 
-actuator.setRestrictionParameterMotorSpeedLimit(25)
+# actuator.setRestrictionParameterMotorSpeedLimit(25)
 
-actuator.setPositionMode()
+# actuator.setPositionMode()
 
-actuator.setCurrentPositionAsZeroPoint()
+# actuator.setCurrentPositionAsZeroPoint()
 
-actuator.setMotorEnabled()
+# actuator.setMotorEnabled()
 
-actuator.setSinglePointOperation(45.0)
+# actuator.setSinglePointOperation(45.0)
 
-# get the current position every 100ms for 10 seconds
-timestamps = []
-position = []
-for i in range(100):
-    timestamps.append(i * 0.02)
-    position.append(actuator.getCurrentPosition())
-    time.sleep(0.02)
+# # get the current position every 100ms for 10 seconds
+# timestamps = []
+# position = []
+# for i in range(100):
+#     timestamps.append(i * 0.02)
+#     position.append(actuator.getCurrentPosition())
+#     time.sleep(0.02)
 
-actuator.setMotorDisabled()
+# actuator.setMotorDisabled()
 
-plt.plot(timestamps, position)
-plt.xlabel('Time (s)')
-plt.ylabel('Position (deg)')
-plt.title('Position vs Time')
-plt.show()
+# plt.plot(timestamps, position)
+# plt.xlabel('Time (s)')
+# plt.ylabel('Position (deg)')
+# plt.title('Position vs Time')
+# plt.show()
 
 
